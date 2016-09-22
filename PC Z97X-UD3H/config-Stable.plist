@@ -26,12 +26,6 @@
 		<array>
 			<dict>
 				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>CpuPm</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
 				<string>DMAR</string>
 			</dict>
 			<dict>
@@ -39,6 +33,12 @@
 				<string>SSDT</string>
 				<key>TableId</key>
 				<string>Cpu0Ist</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>CpuPm</string>
 			</dict>
 		</array>
 		<key>HaltEnabler</key>
@@ -54,7 +54,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>nvda_drv=1 kext-dev-mode=1</string>
+		<string>kext-dev-mode=1</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultLoader</key>
@@ -74,6 +74,8 @@
 	<dict>
 		<key>Type</key>
 		<string>0x0501</string>
+		<key>UseARTFrequency</key>
+		<false/>
 	</dict>
 	<key>Devices</key>
 	<dict>
@@ -155,6 +157,8 @@
 			<dict>
 				<key>Comment</key>
 				<string>t1-10.11-AppleHDA/Realtek ALC...</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				gxnUEQ==
@@ -169,6 +173,8 @@
 			<dict>
 				<key>Comment</key>
 				<string>t1-10.9-10.11-AppleHDA/Realtek ALC1150</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				ixnUEQ==
@@ -182,21 +188,9 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>t1-AppleHDA/Resources/xml&gt;zml</string>
-				<key>Find</key>
-				<data>
-				eG1sLnps
-				</data>
-				<key>Name</key>
-				<string>AppleHDA</string>
-				<key>Replace</key>
-				<data>
-				em1sLnps
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>Trim</string>
+				<key>Disabled</key>
+				<false/>
 				<key>Find</key>
 				<data>
 				QVBQTEUgU1NEAA==
@@ -206,6 +200,22 @@
 				<key>Replace</key>
 				<data>
 				AAAAAAAAAAAAAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>t1-AppleHDA/Resources/xml&gt;zml</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				eG1sLnps
+				</data>
+				<key>Name</key>
+				<string>AppleHDA</string>
+				<key>Replace</key>
+				<data>
+				em1sLnps
 				</data>
 			</dict>
 		</array>
@@ -253,8 +263,10 @@
 	<key>SystemParameters</key>
 	<dict>
 		<key>InjectKexts</key>
-		<string>YES</string>
+		<string>Yes</string>
 		<key>InjectSystemID</key>
+		<true/>
+		<key>NvidiaWeb</key>
 		<true/>
 	</dict>
 </dict>
